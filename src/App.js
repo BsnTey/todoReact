@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./App.css";
 import Tasks from "./Tasks/Tasks";
@@ -6,12 +6,12 @@ import Form from "./Form/Form";
 
 const App = () => {
   const [taskList, setTaskList] = useState([]);
-
-  let taskListLength = taskList.length;
+  const [taskListLength, setTaskListLength] = useState(0);
 
   const handleAddTask = (taskText) => {
+    setTaskListLength(taskListLength + 1);
     const task = {
-      id: taskListLength + 1,
+      id: taskListLength,
       text: taskText,
       done: false,
     };

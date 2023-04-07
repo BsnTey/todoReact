@@ -2,7 +2,6 @@ import cross from "../img/cross.svg";
 import tick from "../img/tick.svg";
 
 const Task = (props) => {
-  console.log(props);
   const { id, text, done } = props.data;
   const { onDelete } = props;
   const { onDone } = props;
