@@ -1,15 +1,13 @@
-import Task from '../Task/Task';
+import Task from "../Task/Task";
+import leaf from "../img/leaf.svg";
 
-import leaf from '../img/leaf.svg';
-
-const Tasks = (props) => {
-  const { taskList } = props;
+const Tasks = ({ taskList, onDelete, onDone }) => {
   return (
     <div className="card mb-4">
       {taskList.length !== 0 ? null : <EmptyList />}
       <ul className="list-group list-group-flush">
         {taskList.map((el) => {
-          return <Task data={el} key={el.id} />;
+          return <Task data={el} key={el.id} onDelete={onDelete} onDone={onDone} />;
         })}
       </ul>
     </div>
